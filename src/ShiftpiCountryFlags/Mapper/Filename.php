@@ -12,7 +12,7 @@ class Filename implements MapperInterface
 
     public function getByIsoCode($isoCode, $size)
     {
-        $path = $this->basePath . '/' . $size . '/' . $isoCode . '.png';
+        $path = $this->basePath . '/' . $size . '/' . strtoupper($isoCode) . '.png';
 
         if (!file_exists($path) || !is_readable($path)) {
             return null;

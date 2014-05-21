@@ -10,7 +10,6 @@ class FlagFactory implements FactoryInterface
     {
         $config = $serviceLocator->get('config');
         $mapperClass = $config['countryflags']['mapper'];
-        // $notFoundImage = $config['countryflags']['notfoundimage'];
 
         return new Flag($serviceLocator->get($mapperClass));
     }
