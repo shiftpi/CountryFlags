@@ -7,6 +7,7 @@ class Filename implements MapperInterface
 
     public function __construct()
     {
+        // TODO Move to config
         $this->basePath = __DIR__ . '/../../../data/flags';
     }
 
