@@ -1,6 +1,7 @@
 <?php
 namespace ShiftpiCountryFlags;
 
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 /**
@@ -8,7 +9,7 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
  * @author Andreas Rutz <andreas.rutz@posteo.de>
  * @license MIT
  */
-class Module implements ConfigProviderInterface
+class Module implements ConfigProviderInterface, AutoloaderProviderInterface
 {
     public function getConfig()
     {
