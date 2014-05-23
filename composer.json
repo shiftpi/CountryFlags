@@ -1,9 +1,9 @@
 {
     "name": "shiftpi/shiftpi-country-flags",
-    "description": "",
+    "description": "Provides access to various country flags",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/shiftpi/ShiftpiCountryFlags",
+    "homepage": "https://github.com/shiftpi/CountryFlags",
     "authors": [
         {
             "name": "Andreas Rutz",
@@ -11,9 +11,28 @@
             "homepage": "http://github.com/shiftpi"
         }
     ],
+    "keywords": [
+        "flags",
+        "countries"
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
     "autoload": {
         "psr-0": {
             "ShiftpiCountryFlags": "src"
+        },
+        "classmap": [
+            "./"
+        ]
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "ShiftpiCountryFlagsTest": "test/ShiftpiCountryFlagsTest"
         }
     }
 }
