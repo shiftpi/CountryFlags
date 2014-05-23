@@ -1,6 +1,8 @@
 <?php
 namespace ShiftpiCountryFlags\Mapper;
 
+use ShiftpiCountryFlags\Entity\Flag as FlagEntity;
+
 /**
  * Mapper between file path, country code and size
  * @author Andreas Rutz <andreas.rutz@posteo.de>
@@ -11,13 +13,16 @@ class Filename implements MapperInterface
     /** @var string $basePath Path of the flag files */
     protected $basePath;
 
+    /** @var FlagEntity */
+    protected $flagPrototype;
+
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct(FlagEntity $flagPrototype)
     {
-        // TODO Move to config
-        $this->basePath = __DIR__ . '/../../../data/flags';
+        $this->basePath = __DIR__ . '/../../../data/flags';             // TODO Move to config
+        $this->flagPrototype = $flagPrototype;
     }
 
     /**
@@ -31,6 +36,9 @@ class Filename implements MapperInterface
             return null;
         }
 
-        return $path;
+        $this->flagPrototype->setPath($path);
+        $this->flagPrototype->setContent(file_get_contents($path));
+
+        return $this->flagPrototype;
     }
 }

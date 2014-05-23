@@ -32,6 +32,7 @@ class FlagController extends AbstractActionController
         $country = strtolower($this->params()->fromRoute('country'));
         $size = (int) $this->params()->fromRoute('size', FlagService::SIZE_16);
 
+        /** @var \ShiftpiCountryFlags\Entity\Flag $flag */
         $flag = $this->flagService->find($country, $size);
 
         /** @var HttpResponse $response */
@@ -41,9 +42,9 @@ class FlagController extends AbstractActionController
             return $this->notFoundAction();
         }
 
-        $response->setContent($flag);
-        $response->getHeaders()->addHeaderLine('Content-Type', 'image/png');
-        $response->getHeaders()->addHeaderLine('Content-Length', strlen($flag));
+        $response->setContent($flag->getContent());
+        $response->getHeaders()->addHeaderLine('Content-Type', $flag->getMimeType());
+        $response->getHeaders()->addHeaderLine('Content-Length', strlen($flag->getContent()));
 
         return $response;
     }

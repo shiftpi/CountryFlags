@@ -2,6 +2,7 @@
 namespace ShiftpiCountryFlags\Service;
 
 use ShiftpiCountryFlags\Mapper\MapperInterface;
+use ShiftpiCountryFlags\Entity\Flag as FlagEntity;
 
 /**
  * Flag Service
@@ -32,16 +33,17 @@ class Flag
      * Returns the binary data (always png) or NULL of a flag
      * @param string $isoCode ISO 3166 ALPHA-2 code
      * @param int $size
-     * @return string
+     * @return FlagEntity
      */
     public function find($isoCode, $size)
     {
-        $path = $this->mapper->getByIsoCode($isoCode, $size);
+        /** @var FlagEntity $flag */
+        $flag = $this->mapper->getByIsoCode($isoCode, $size);
 
-        if ($path === null) {
-            return $path;
+        if ($flag !== null) {
+            $flag->setMimeType('image/png'); // TODO Determine MIME type
         }
 
-        return file_get_contents($path);
+        return $flag;
     }
 } 

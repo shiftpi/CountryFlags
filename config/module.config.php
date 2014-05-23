@@ -2,11 +2,15 @@
 return array(
     'service_manager' => array(
         'invokables' => array(
-            'ShiftpiCountryFlags\Mapper\Filename' => 'ShiftpiCountryFlags\Mapper\Filename',
+            'ShiftpiCountryFlags\Entity\Flag' => 'ShiftpiCountryFlags\Entity\Flag',
         ),
         'factories' => array(
+            'ShiftpiCountryFlags\Mapper\Filename' => 'ShiftpiCountryFlags\Mapper\FilenameFactory',
             'ShiftpiCountryFlags\Service\Flag' => 'ShiftpiCountryFlags\Service\FlagFactory',
-        )
+        ),
+        'shared' => array(
+            'ShiftpiCountryFlags\Entity\Flag' => false,
+        ),
     ),
     'controllers' => array(
         'factories' => array(
