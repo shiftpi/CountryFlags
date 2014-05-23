@@ -3,6 +3,11 @@ namespace ShiftpiCountryFlags\Service;
 
 use ShiftpiCountryFlags\Mapper\MapperInterface;
 
+/**
+ * Flag Service
+ * @author Andreas Rutz <andreas.rutz@posteo.de>
+ * @license MIT
+ */
 class Flag
 {
     const SIZE_16 = 16;
@@ -15,6 +20,7 @@ class Flag
     protected $mapper;
 
     /**
+     * Constructor
      * @param MapperInterface $mapper
      */
     public function __construct(MapperInterface $mapper)
@@ -23,7 +29,8 @@ class Flag
     }
 
     /**
-     * @param string $isoCode
+     * Returns the binary data (always png) or NULL of a flag
+     * @param string $isoCode ISO 3166 ALPHA-2 code
      * @param int $size
      * @return string
      */

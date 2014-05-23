@@ -1,0 +1,19 @@
+{
+    "name": "shiftpi/shiftpi-country-flags",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/shiftpi/ShiftpiCountryFlags",
+    "authors": [
+        {
+            "name": "Andreas Rutz",
+            "email": "andreas.rutz@posteo.de",
+            "homepage": "http://github.com/shiftpi"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "ShiftpiCountryFlags": "src"
+        }
+    }
+}

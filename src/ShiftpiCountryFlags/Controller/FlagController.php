@@ -5,6 +5,11 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Http\Response as HttpResponse;
 use ShiftpiCountryFlags\Service\Flag as FlagService;
 
+/**
+ * FlagController
+ * @author Andreas Rutz <andreas.rutz@posteo.de>
+ * @license MIT
+ */
 class FlagController extends AbstractActionController
 {
     /** @var FlagService */
@@ -18,6 +23,10 @@ class FlagController extends AbstractActionController
         $this->flagService = $flagService;
     }
 
+    /**
+     * Sends the flag or triggers a 404 error
+     * @return array|HttpResponse
+     */
     public function indexAction()
     {
         $country = strtolower($this->params()->fromRoute('country'));
