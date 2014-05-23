@@ -19,6 +19,7 @@ class FlagFactory implements FactoryInterface
         $config = $serviceLocator->get('config');
         $mapperClass = $config['countryflags']['mapper'];
 
-        return new Flag($serviceLocator->get($mapperClass));
+        return new Flag($serviceLocator->get($mapperClass),
+            $serviceLocator->get('ShiftpiCountryFlags\Service\MimeType'));
     }
 }

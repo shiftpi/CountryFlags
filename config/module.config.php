@@ -3,6 +3,7 @@ return array(
     'service_manager' => array(
         'invokables' => array(
             'ShiftpiCountryFlags\Entity\Flag' => 'ShiftpiCountryFlags\Entity\Flag',
+            'ShiftpiCountryFlags\Service\MimeType' => 'ShiftpiCountryFlags\Service\MimeType',
         ),
         'factories' => array(
             'ShiftpiCountryFlags\Mapper\Filename' => 'ShiftpiCountryFlags\Mapper\FilenameFactory',

@@ -20,13 +20,18 @@ class Flag
     /** @var MapperInterface */
     protected $mapper;
 
+    /** @var MimeType */
+    protected $mimeTypeService;
+
     /**
      * Constructor
      * @param MapperInterface $mapper
+     * @param MimeType $mimeTypeService
      */
-    public function __construct(MapperInterface $mapper)
+    public function __construct(MapperInterface $mapper, MimeType $mimeTypeService)
     {
         $this->mapper = $mapper;
+        $this->mimeTypeService = $mimeTypeService;
     }
 
     /**
@@ -41,7 +46,7 @@ class Flag
         $flag = $this->mapper->getByIsoCode($isoCode, $size);
 
         if ($flag !== null) {
-            $flag->setMimeType('image/png'); // TODO Determine MIME type
+            $flag->setMimeType($this->mimeTypeService->determine($flag->getContent()));
         }
 
         return $flag;
