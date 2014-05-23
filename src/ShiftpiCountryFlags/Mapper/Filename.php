@@ -30,14 +30,20 @@ class Filename implements MapperInterface
      */
     public function getByIsoCode($isoCode, $size)
     {
-        $path = $this->basePath . '/' . $size . '/' . strtoupper($isoCode) . '.png';
+        $matches = glob($this->basePath . '/' . $size . '/' . strtoupper($isoCode) . '.*');
 
-        if (!file_exists($path) || !is_readable($path)) {
+        if (count($matches) < 1) {
             return null;
         }
 
-        $this->flagPrototype->setPath($path);
-        $this->flagPrototype->setContent(file_get_contents($path));
+        $match = $matches[0];
+
+        if (!file_exists($match) || !is_readable($match)) {
+            return null;
+        }
+
+        $this->flagPrototype->setPath($match);
+        $this->flagPrototype->setContent(file_get_contents($match));
 
         return $this->flagPrototype;
     }
