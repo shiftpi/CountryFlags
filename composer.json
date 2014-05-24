@@ -1,5 +1,5 @@
 {
-    "name": "shiftpi/shiftpi-country-flags",
+    "name": "shiftpi/country-flags",
     "description": "Provides access to various country flags",
     "type": "library",
     "license": "MIT",
