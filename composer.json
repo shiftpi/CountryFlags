@@ -13,7 +13,8 @@
     ],
     "keywords": [
         "flags",
-        "countries"
+        "countries",
+	    "zf2"
     ],
     "require": {
         "php": ">=5.3.3",
