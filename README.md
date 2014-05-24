@@ -2,13 +2,22 @@
 Provides access to various country flags
 
 ## Installation
-```sh
-TBD
+### Using Composer
+Require `shiftpi/country-flags` in your `composer.json`. Then update your dependencies.
+You can now enable the module in the `config/application.config.php` file:
+```php
+// ...
+'modules' => array(
+    // ...
+    'ShiftpiCountryFlags',
+    // ...
+),
+// ...
 ```
 
 ## Configuration
-Copy "vendor/shiftpi/shiftpi-country-flags/data/shiftpicountryflags.global.php.dist" to
-"config/autoload/shiftpicountryflags.global.php".
+Copy `vendor/shiftpi/shiftpi-country-flags/data/shiftpicountryflags.global.php.dist` to
+`config/autoload/shiftpicountryflags.global.php`.
 
 Edit the configuration file:
 ```php
@@ -34,7 +43,7 @@ Size defines the width and height of the flag in px. Possible values are 16, 24,
 $this->countryFlagUrl('BR', 64);
 //...
 ```
-Where the size is optional again.
+Where size is optional (default 16).
 
 ## License
 Licensed under the MIT license. See license file.
