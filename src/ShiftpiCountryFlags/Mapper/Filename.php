@@ -21,7 +21,7 @@ class Filename implements MapperInterface
      * @var FlagEntity $flagPrototype
      * @var string $dataPath
      */
-    public function __construct(FlagEntity $flagPrototype, $dataPath)
+    public function __construct($flagPrototype, $dataPath)
     {
         $this->dataPath = $dataPath;
         $this->flagPrototype = $flagPrototype;
