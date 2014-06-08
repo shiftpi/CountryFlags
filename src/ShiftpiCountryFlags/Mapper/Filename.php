@@ -10,11 +10,11 @@ use ShiftpiCountryFlags\Entity\Flag as FlagEntity;
  */
 class Filename implements MapperInterface
 {
-    /** @var string Path of the flag files */
-    protected $dataPath;
-
     /** @var FlagEntity */
     protected $flagPrototype;
+
+    /** @var string Path of the flag files */
+    protected $dataPath;
 
     /**
      * Constructor
@@ -23,8 +23,24 @@ class Filename implements MapperInterface
      */
     public function __construct($flagPrototype, $dataPath)
     {
-        $this->dataPath = $dataPath;
         $this->flagPrototype = $flagPrototype;
+        $this->dataPath = $dataPath;
+    }
+
+    /**
+     * @return FlagEntity
+     */
+    public function getFlagPrototype()
+    {
+        return $this->flagPrototype;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDataPath()
+    {
+        return $this->dataPath;
     }
 
     /**
