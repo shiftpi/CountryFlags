@@ -10,18 +10,20 @@ use ShiftpiCountryFlags\Entity\Flag as FlagEntity;
  */
 class Filename implements MapperInterface
 {
-    /** @var string $basePath Path of the flag files */
-    protected $basePath;
+    /** @var string Path of the flag files */
+    protected $dataPath;
 
     /** @var FlagEntity */
     protected $flagPrototype;
 
     /**
      * Constructor
+     * @var FlagEntity $flagPrototype
+     * @var string $dataPath
      */
-    public function __construct(FlagEntity $flagPrototype)
+    public function __construct(FlagEntity $flagPrototype, $dataPath)
     {
-        $this->basePath = __DIR__ . '/../../../data/flags';             // TODO Move to config
+        $this->dataPath = $dataPath;
         $this->flagPrototype = $flagPrototype;
     }
 
@@ -30,7 +32,7 @@ class Filename implements MapperInterface
      */
     public function getByIsoCode($isoCode, $size)
     {
-        $matches = glob($this->basePath . '/' . $size . '/' . strtoupper($isoCode) . '.*');
+        $matches = glob($this->dataPath . '/' . $size . '/' . strtoupper($isoCode) . '.*');
 
         if (count($matches) < 1) {
             return null;
@@ -38,7 +40,7 @@ class Filename implements MapperInterface
 
         $match = $matches[0];
 
-        if (!file_exists($match) || !is_readable($match)) {
+        if (!is_readable($match)) {
             return null;
         }
 

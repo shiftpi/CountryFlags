@@ -2,5 +2,6 @@
 return array(
     'countryflags' => array(
         'mapper' => 'ShiftpiCountryFlags\Mapper\Filename',
+        'datapath' => __DIR__ . '/../../vendor/shiftpi/country-flags/data/flags',
     ),
 );

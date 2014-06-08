@@ -16,6 +16,13 @@ class FilenameFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return new Filename($serviceLocator->get('ShiftpiCountryFlags\Entity\Flag'));
+        $config = $serviceLocator->get('config');
+        $dataPath = $config['countryflags']['datapath'];
+
+        if (!file_exists($dataPath)) {
+            throw new \Exception('Invalid data path ' . $dataPath);
+        }
+
+        return new Filename($serviceLocator->get('ShiftpiCountryFlags\Entity\Flag'), $dataPath);
     }
 }
