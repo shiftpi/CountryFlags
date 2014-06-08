@@ -36,7 +36,7 @@ class FlagController extends AbstractActionController
         $flag = $this->flagService->find($country, $size);
 
         /** @var HttpResponse $response */
-        $response = $this->response;
+        $response = $this->getResponse();
 
         if ($flag === null) {
             return $this->notFoundAction();
