@@ -8,6 +8,7 @@ return array(
         'factories' => array(
             'ShiftpiCountryFlags\Mapper\Filename' => 'ShiftpiCountryFlags\Mapper\FilenameFactory',
             'ShiftpiCountryFlags\Service\Flag' => 'ShiftpiCountryFlags\Service\FlagFactory',
+            'ShiftpiCountryFlags\Options\ModuleOptions' => 'ShiftpiCountryFlags\Options\ModuleOptionsFactory',
         ),
         'shared' => array(
             'ShiftpiCountryFlags\Entity\Flag' => false,

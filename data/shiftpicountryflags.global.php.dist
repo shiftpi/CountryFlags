@@ -2,6 +2,7 @@
 return array(
     'countryflags' => array(
         'mapper' => 'ShiftpiCountryFlags\Mapper\Filename',
-        'datapath' => __DIR__ . '/../../vendor/shiftpi/country-flags/data/flags',
+        // Specifies the path to the image files. By default the fíles under data/flags are used.
+        // 'datapath' => __DIR__ . '/../../vendor/shiftpi/country-flags/data/flags',
     ),
 );

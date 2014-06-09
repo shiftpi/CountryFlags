@@ -105,9 +105,8 @@ class FlagControllerTest extends \PHPUnit_Framework_TestCase
         $this->routeMatch->setParam('country', 'XX');
         $this->routeMatch->setParam('size', '32');
 
-        /** @var ViewModel $response */
-        $response = $this->controller->indexAction();
+        $this->controller->indexAction();
 
-        $this->assertEquals('Page not found', $response->getVariable('content'));
+        $this->assertEquals(404, $this->controller->getResponse()->getStatusCode());
     }
 }
