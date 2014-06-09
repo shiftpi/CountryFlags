@@ -24,6 +24,7 @@ Edit the configuration file:
 return array(
     'countryflags' => array(
         'mapper' => 'ShiftpiCountryFlags\Mapper\Filename',          // country code -> file path mapper
+        'datapath' => '/alternative/data/path',                     // new since 0.1.1; optional
     ),
 );
 ```
