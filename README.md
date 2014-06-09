@@ -14,6 +14,7 @@ You can now enable the module in the `config/application.config.php` file:
 ),
 // ...
 ```
+If you are using Windows, make `php_fileinfo.dll` is loaded.
 
 ## Configuration
 Copy `vendor/shiftpi/shiftpi-country-flags/data/shiftpicountryflags.global.php.dist` to
@@ -23,8 +24,8 @@ Edit the configuration file:
 ```php
 return array(
     'countryflags' => array(
-        'mapper' => 'ShiftpiCountryFlags\Mapper\Filename',          // country code -> file path mapper
-        'datapath' => '/alternative/data/path',                     // new since 0.1.1; optional
+        'mapper' => 'ShiftpiCountryFlags\Mapper\Filename',      // country code -> file path mapper
+        'datapath' => '/alternative/data/path',                 // new since 0.1.1; optional
     ),
 );
 ```
