@@ -41,9 +41,7 @@ Size defines the width and height of the flag in px. Possible values are 16, 24,
 
 ### View Helper
 ```html
-//...
 <img src="<?php echo $this->countryFlagUrl('SC', 64) ?>" alt="Seychelles" width="64" />
-//...
 ```
 Where the second parameter (size) is optional (default 16).
 
