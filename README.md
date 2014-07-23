@@ -40,7 +40,7 @@ Where countrycode is the ISO 3166 ALPHA-2 code (see https://en.wikipedia.org/wik
 Size defines the width and height of the flag in px. Possible values are 16, 24, 32, 48, 64. Default is 16.
 
 ### View Helper
-```php
+```html
 //...
 <img src="<?php echo $this->countryFlagUrl('SC', 64) ?>" alt="Seychelles" width="64" />
 //...
