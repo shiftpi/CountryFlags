@@ -14,10 +14,10 @@ You can now enable the module in the `config/application.config.php` file:
 ),
 // ...
 ```
-If you are using Windows, make `php_fileinfo.dll` is loaded.
+If you are using Windows, make sure `php_fileinfo.dll` is loaded.
 
 ## Configuration
-Copy `vendor/shiftpi/shiftpi-country-flags/data/shiftpicountryflags.global.php.dist` to
+Copy `vendor/shiftpi/shiftpi-country-flags/config/shiftpicountryflags.global.php.dist` to
 `config/autoload/shiftpicountryflags.global.php`.
 
 Edit the configuration file:
@@ -42,10 +42,10 @@ Size defines the width and height of the flag in px. Possible values are 16, 24,
 ### View Helper
 ```php
 //...
-$this->countryFlagUrl('BR', 64);
+<img src="<?php echo $this->countryFlagUrl('SC', 64) ?>" alt="Seychelles" width="64" />
 //...
 ```
-Where size is optional (default 16).
+Where the second parameter (size) is optional (default 16).
 
 ## License
 Licensed under the MIT license. See license file.
