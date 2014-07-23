@@ -4,7 +4,7 @@ namespace ShiftpiCountryFlags\Options;
 use Zend\Stdlib\AbstractOptions;
 
 /**
- * Factory for Filename mapper
+ * Options from config file
  * @author Andreas Rutz <andreas.rutz@posteo.de>
  * @license MIT
  */

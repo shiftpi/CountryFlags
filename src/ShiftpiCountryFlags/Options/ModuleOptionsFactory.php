@@ -4,6 +4,11 @@ namespace ShiftpiCountryFlags\Options;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
+/**
+ * Factory for ModuleOptions
+ * @author Andreas Rutz <andreas.rutz@posteo.de>
+ * @license MIT
+ */
 class ModuleOptionsFactory implements FactoryInterface
 {
     /**
