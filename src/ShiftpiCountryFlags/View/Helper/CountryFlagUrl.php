@@ -5,6 +5,11 @@ use Zend\Mvc\Router\RouteStackInterface;
 use Zend\View\Helper\AbstractHelper;
 use ShiftpiCountryFlags\Service\Flag as FlagService;
 
+/**
+ * View helper for generating URLs to flags
+ * @author Andreas Rutz <andreas.rutz@posteo.de>
+ * @license MIT
+ */
 class CountryFlagUrl extends AbstractHelper
 {
     /** @var RouteStackInterface */
