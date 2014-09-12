@@ -17,10 +17,10 @@ You can now enable the module in the `config/application.config.php` file:
 If you are using Windows, make sure `php_fileinfo.dll` is loaded.
 
 ## Configuration
-Copy `vendor/shiftpi/shiftpi-country-flags/config/shiftpicountryflags.global.php.dist` to
+Copy `vendor/shiftpi/country-flags/config/shiftpicountryflags.global.php.dist` to
 `config/autoload/shiftpicountryflags.global.php`.
 
-Edit the configuration file:
+Edit the configuration file (if needed):
 ```php
 return array(
     'countryflags' => array(
