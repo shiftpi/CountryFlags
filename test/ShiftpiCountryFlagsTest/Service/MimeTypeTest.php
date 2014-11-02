@@ -5,7 +5,7 @@ use ShiftpiCountryFlags\Service\MimeType;
 
 /**
  * Test for ShiftpiCountryFlags\Service\MimeType
- * @covers ShiftpiCountryFlags\Service\MimeType
+ * @coversDefaultClass ShiftpiCountryFlags\Service\MimeType
  * @author Andreas Rutz <andreas.rutz@posteo.de>
  * @license MIT
  */
@@ -19,6 +19,9 @@ class MimeTypeTest extends \PHPUnit_Framework_TestCase
         $this->service = new MimeType();
     }
 
+    /**
+     * @covers ::determine
+     */
     public function testDetermineValid()
     {
         $this->assertEquals('text/plain', $this->service->determine('some text'));

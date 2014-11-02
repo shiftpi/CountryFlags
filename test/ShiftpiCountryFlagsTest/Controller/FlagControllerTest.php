@@ -11,7 +11,7 @@ use Zend\View\Model\ViewModel;
 
 /**
  * Test for ShiftpiCountryFlags\Controller\FlagController
- * @covers ShiftpiCountryFlags\Controller\FlagController
+ * @coversDefaultClass \ShiftpiCountryFlags\Controller\FlagController
  * @author Andreas Rutz <andreas.rutz@posteo.de>
  * @license MIT
  */
@@ -42,6 +42,9 @@ class FlagControllerTest extends \PHPUnit_Framework_TestCase
         $this->controller->setEvent($event);
     }
 
+    /**
+     * @covers ::indexAction
+     */
     public function testSuccessWithSize()
     {
         $content = 'abc';
@@ -69,6 +72,9 @@ class FlagControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(strlen($content), $response->getHeaders()->get('Content-Length')->getFieldValue());
     }
 
+    /**
+     * @covers ::indexAction
+     */
     public function testSuccessWithoutSize()
     {
         $content = 'abc';
@@ -95,6 +101,9 @@ class FlagControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(strlen($content), $response->getHeaders()->get('Content-Length')->getFieldValue());
     }
 
+    /**
+     * @covers ::indexAction
+     */
     public function testNotFound()
     {
         $this->flagServiceMock->expects($this->once())

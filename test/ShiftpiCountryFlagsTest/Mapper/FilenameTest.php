@@ -6,7 +6,7 @@ use ShiftpiCountryFlags\Entity\Flag as FlagEntity;
 
 /**
  * Test for ShiftpiCountryFlags\Mapper\Filename
- * @covers ShiftpiCountryFlags\Mapper\Filename
+ * @coversDefaultClass \ShiftpiCountryFlags\Mapper\Filename
  * @author Andreas Rutz <andreas.rutz@posteo.de>
  * @license MIT
  */
@@ -23,6 +23,9 @@ class FilenameTest extends \PHPUnit_Framework_TestCase
         $this->flagPath = __DIR__ . '/../../data/32';
     }
 
+    /**
+     * @covers ::__construct
+     */
     public function testConstructor()
     {
         $classA = new \stdClass();
@@ -33,6 +36,9 @@ class FilenameTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('foo', $mapper->getDataPath());
     }
 
+    /**
+     * @covers ::getByIsoCode
+     */
     public function testGetByIsoCodeExists()
     {
         $flagPath = $this->flagPath . '/XY.txt';
@@ -45,12 +51,18 @@ class FilenameTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($result, $mapper->getByIsoCode('XY', 32));
     }
 
+    /**
+     * @covers ::getByIsoCode
+     */
     public function testGetByIsoCodeDoesntExist()
     {
         $mapper = new Mapper(new FlagEntity(), dirname($this->flagPath));
         $this->assertNull($mapper->getByIsoCode('YY', 32));
     }
 
+    /**
+     * @covers ::getByIsoCode
+     */
     public function testGetByIsoCodeNotReadable()
     {
         $flagPath = $this->flagPath . '/ZZ.txt';

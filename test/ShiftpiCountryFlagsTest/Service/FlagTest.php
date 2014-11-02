@@ -6,7 +6,7 @@ use ShiftpiCountryFlags\Entity\Flag as Entity;
 
 /**
  * Test for ShiftpiCountryFlags\Service\Flag
- * @covers ShiftpiCountryFlags\Service\Flag
+ * @coversDefaultClass ShiftpiCountryFlags\Service\Flag
  * @author Andreas Rutz <andreas.rutz@posteo.de>
  * @license MIT
  */
@@ -31,6 +31,9 @@ class FlagTest extends \PHPUnit_Framework_TestCase
         $this->service = new Flag($this->mapperMock, $this->mimeTypeMock);
     }
 
+    /**
+     * @covers ::find
+     */
     public function testFindValid()
     {
         $entity = new Entity();
@@ -51,6 +54,9 @@ class FlagTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($entity, $this->service->find('BR', 32));
     }
 
+    /**
+     * @covers ::find
+     */
     public function testFindInvalid()
     {
         $this->mapperMock->expects($this->once())
