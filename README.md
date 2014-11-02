@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/shiftpi/CountryFlags/badges/gpa.svg)](https://codeclimate.com/github/shiftpi/CountryFlags)
+
 #ShiftpiCountryFlags
 Provides access to various country flags
 
